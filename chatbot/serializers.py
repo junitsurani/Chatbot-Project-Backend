@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import ChatbotSettings, ChatbotInteraction
+from .models import ChatbotSettings, ChatInteraction
 
 class ChatbotSettingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChatbotSettings
         fields = '__all__'
 
-class ChatbotInteractionSerializer(serializers.ModelSerializer):
+class ChatInteractionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ChatbotInteraction
-        fields = '__all__'
+        model = ChatInteraction
+        fields = ['user_message', 'bot_response', 'timestamp']
